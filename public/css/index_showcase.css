@@ -1,0 +1,362 @@
+/* ===================================================
+   HERO PRINCIPAL
+   =================================================== */
+
+.hero-home {
+  padding: 4.5rem 1.5rem 3rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, rgba(11, 15, 20, 0) 70%);
+}
+
+.hero-home-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-main-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-main-title {
+    font-size: 2.1rem;
+  }
+}
+
+.hero-lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.hero-search-wrapper {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.hero-search-input {
+  width: 100%;
+  padding: 1rem 1.4rem;
+  background-color: #0b0f14;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  outline: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.hero-search-input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* ===================================================
+   CARRUSEL INTERACTIVO CON AUTOPLAY
+   =================================================== */
+
+.carousel-section {
+  max-width: 1280px;
+  margin: 2rem auto 5rem auto;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  padding-bottom: 1rem;
+}
+
+.section-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  font-weight: 600;
+  display: block;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: #fff;
+  margin: 0.25rem 0 0 0;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.carousel-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(18, 24, 33, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--accent-gold-light);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.carousel-arrow:hover {
+  background: var(--accent-gold);
+  color: #0b0f14;
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+}
+
+/* Contenedor sin barras de desplazamiento visibles */
+.carousel-track-container {
+  display: flex;
+  gap: 1.6rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.5rem 1.8rem 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-track-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas */
+.saint-card-slide {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  background: linear-gradient(180deg, #161e29 0%, #0f151e 100%);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+}
+
+.saint-card-slide:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.slide-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.saint-card-slide:hover .slide-image {
+  transform: scale(1.08);
+}
+
+.slide-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 21, 30, 0.9) 0%, transparent 60%);
+}
+
+.slide-feast-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  z-index: 2;
+  background: rgba(11, 15, 20, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--accent-gold-light);
+  font-size: 0.76rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.slide-content {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.slide-title {
+  font-family: var(--font-serif);
+  font-size: 1.48rem;
+  color: #fff;
+  margin: 0 0 0.35rem 0;
+}
+
+.slide-subtitle {
+  font-size: 0.86rem;
+  color: var(--accent-gold);
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+}
+
+.slide-patron {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+  flex-grow: 1;
+}
+
+.slide-action-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 8px;
+  color: var(--accent-gold-light);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: rgba(212, 175, 55, 0.05);
+  transition: all 0.25s ease;
+}
+
+.slide-action-btn:hover {
+  background: var(--accent-gold);
+  color: #0b0f14;
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+}
+
+/* ===================================================
+   CITA ESPIRITUAL
+   =================================================== */
+
+.spiritual-quote-banner {
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(21, 28, 38, 0.4) 0%, rgba(15, 20, 27, 0.7) 100%);
+  padding: 4rem 1.5rem;
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.spiritual-quote-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.spiritual-text {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #f1f5f9;
+  line-height: 1.5;
+  margin: 0 0 1.2rem 0;
+}
+
+.spiritual-author {
+  font-size: 0.95rem;
+  color: var(--accent-gold-light);
+  letter-spacing: 0.05em;
+}
+
+/* ===================================================
+   ACCESOS DIRECTOS / CATEGORÍAS
+   =================================================== */
+
+.categories-preview-section {
+  max-width: 1240px;
+  margin: 0 auto 5rem auto;
+  padding: 0 1.5rem;
+}
+
+.categories-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.preview-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 2.2rem 1.8rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.preview-box:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.preview-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  opacity: 0.7;
+  margin-bottom: 0.6rem;
+}
+
+.preview-box-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: #fff;
+  margin: 0 0 0.6rem 0;
+}
+
+.preview-box-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+  flex-grow: 1;
+}
+
+.preview-link-arrow {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-gold-light);
+}
